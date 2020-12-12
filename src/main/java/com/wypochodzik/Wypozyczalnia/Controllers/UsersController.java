@@ -3,6 +3,7 @@ package com.wypochodzik.Wypozyczalnia.Controllers;
 import com.wypochodzik.Wypozyczalnia.DTO.UsersCreationDTO;
 import com.wypochodzik.Wypozyczalnia.DTO.UsersRestResponseDTO;
 import com.wypochodzik.Wypozyczalnia.Entities.UsersEntity;
+import com.wypochodzik.Wypozyczalnia.Exceptions.Classes.NoSuchUserException;
 import com.wypochodzik.Wypozyczalnia.Services.users.UsersService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -33,7 +34,7 @@ public class UsersController {
             @ApiResponse(code = 500, message = "Server malfunction")
     })
     @GetMapping(value = "/users/{userId}")
-    public UsersRestResponseDTO getUser(@PathVariable Long userId) {
+    public UsersRestResponseDTO getUser(@PathVariable Long userId) throws NoSuchUserException {
 
         UsersEntity usersEntity = this.usersService.getUser(userId);
         return this.modelMapper.map(usersEntity, UsersRestResponseDTO.class);

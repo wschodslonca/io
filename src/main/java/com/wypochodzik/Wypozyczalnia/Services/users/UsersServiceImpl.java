@@ -4,6 +4,10 @@ import com.wypochodzik.Wypozyczalnia.DTO.UsersCreationDTO;
 import com.wypochodzik.Wypozyczalnia.DTO.UsersUpdateDTO;
 import com.wypochodzik.Wypozyczalnia.Entities.UsersEntity;
 import com.wypochodzik.Wypozyczalnia.Repositories.UsersRepository;
+import com.wypochodzik.Wypozyczalnia.DTO.UserChangePasswordDTO;
+import com.wypochodzik.Wypozyczalnia.Exceptions.Classes.InvalidPasswordException;
+import com.wypochodzik.Wypozyczalnia.Exceptions.Classes.NoSuchUserException;
+import com.wypochodzik.Wypozyczalnia.Exceptions.Classes.UserAlreadyExistsException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,10 +25,10 @@ public class UsersServiceImpl implements UsersService{
     }
 
     @Override
-    public UsersEntity getUser(Long userId) {
+    public UsersEntity getUser(Long userId) throws NoSuchUserException{
         Optional<UsersEntity> userEntityOptional = this.usersRepository.findById(userId);
         if (userEntityOptional.isEmpty()){
-            return null; // wyjatek
+            throw new NoSuchUserException();
         }
         return userEntityOptional.get();
     }
@@ -32,7 +36,7 @@ public class UsersServiceImpl implements UsersService{
     @Override
     public UsersEntity createUser(UsersCreationDTO usersCreationDTO) {
         if (this.usersRepository.findByEmail(usersCreationDTO.getEmail()) != null){
-            return null; // wyjatek
+            throw new UserAlreadyExistsException();
         }
         UsersEntity usersEntity = this.modelMapper.map(usersCreationDTO, UsersEntity.class);
         usersEntity.setTotalPayed(0);
@@ -43,7 +47,7 @@ public class UsersServiceImpl implements UsersService{
     public UsersEntity updateUser(Long userId, UsersUpdateDTO usersUpdateDTO) {
         Optional<UsersEntity> userEntityOptional = this.usersRepository.findById(userId);
         if (userEntityOptional.isEmpty()){
-            return null; // wyjatek
+            throw new NoSuchUserException();
         }
         UsersEntity usersEntity = this.modelMapper.map(usersUpdateDTO, UsersEntity.class);
         usersEntity.setEmail(userEntityOptional.get().getEmail());
@@ -61,7 +65,7 @@ public class UsersServiceImpl implements UsersService{
     public void deleteUser(Long userId) {
         Optional<UsersEntity> userEntityOptional = this.usersRepository.findById(userId);
         if (userEntityOptional.isEmpty()){
-            int p =1; // wyjatek
+            throw new NoSuchUserException();
         }
         else{
             UsersEntity userEntity = userEntityOptional.get();
@@ -69,5 +73,18 @@ public class UsersServiceImpl implements UsersService{
         }
     }
 
-    //ZMINA HASLA
+    @Override
+    public UsersEntity changePassword(Long userId, UserChangePasswordDTO userPasswordChangeDto) throws NoSuchUserException, InvalidPasswordException{
+        Optional<UsersEntity> userEntityOptional = this.usersRepository.findById(userId);
+        if (userEntityOptional.isEmpty())
+            throw new NoSuchUserException();
+
+        UsersEntity userEntity = userEntityOptional.get();
+        if (!userEntity.getPasswd().equals(userPasswordChangeDto.getOldPass()))
+            throw new InvalidPasswordException();
+        else
+            userEntity.setPasswd(userPasswordChangeDto.getNewPass());
+        return this.usersRepository.save(userEntity);
+    }
+
 }
