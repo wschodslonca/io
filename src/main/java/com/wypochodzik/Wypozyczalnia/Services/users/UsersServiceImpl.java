@@ -1,15 +1,9 @@
 package com.wypochodzik.Wypozyczalnia.Services.users;
 
-<<<<<<< HEAD
 import com.wypochodzik.Wypozyczalnia.DTO.UsersCreationDTO;
+import com.wypochodzik.Wypozyczalnia.DTO.UsersUpdateDTO;
 import com.wypochodzik.Wypozyczalnia.Entities.UsersEntity;
 import com.wypochodzik.Wypozyczalnia.Repositories.UsersRepository;
-=======
-import com.wypochodzik.Wypozyczalnia.DTO.UserCreationDTO;
-import com.wypochodzik.Wypozyczalnia.DTO.UserUpdateDTO;
-import com.wypochodzik.Wypozyczalnia.Entities.UserEntity;
-import com.wypochodzik.Wypozyczalnia.Repositories.UserRepository;
->>>>>>> c426f9754725fb855b9030ce0b6b4ca89c6781f9
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,44 +40,33 @@ public class UsersServiceImpl implements UsersService{
         return this.usersRepository.save(usersEntity);
     }
 
-    @Override
-<<<<<<< HEAD
-    public UsersEntity updateUser(Long userId) {
-        return null;
-    }
-
-    @Override
-    public UsersEntity deleteUser(Long userId) {
-        return null;
-=======
-    public UserEntity updateUser(Long userId, UserUpdateDTO userUpdateDTO) {
-        Optional<UserEntity> userEntityOptional = this.userRepository.findById(userId);
+    public UsersEntity updateUser(Long userId, UsersUpdateDTO usersUpdateDTO) {
+        Optional<UsersEntity> userEntityOptional = this.usersRepository.findById(userId);
         if (userEntityOptional.isEmpty()){
             return null; // wyjatek
         }
-        UserEntity userEntity = this.modelMapper.map(userUpdateDTO, UserEntity.class);
-        userEntity.setEmail(userEntityOptional.get().getEmail());
-        userEntity.setUserId(userEntityOptional.get().getUserId());
-        userEntity.setCardData(userEntityOptional.get().getCardData());
-        userEntity.setTotalPayed(userEntityOptional.get().getTotalPayed());
-        userEntity.setDiscountRatio(userEntityOptional.get().getDiscountRatio());
-        userEntity.setIntPromo(userEntityOptional.get().isIntPromo());
-        userEntity.setPasswd(userEntityOptional.get().getPasswd());
-        userEntity.setBanned(userEntityOptional.get().isBanned());
-        return this.userRepository.save(userEntity);
+        UsersEntity usersEntity = this.modelMapper.map(usersUpdateDTO, UsersEntity.class);
+        usersEntity.setEmail(userEntityOptional.get().getEmail());
+        usersEntity.setUserId(userEntityOptional.get().getUserId());
+        usersEntity.setCardData(userEntityOptional.get().getCardData());
+        usersEntity.setTotalPayed(userEntityOptional.get().getTotalPayed());
+        usersEntity.setDiscountRatio(userEntityOptional.get().getDiscountRatio());
+        usersEntity.setIntPromo(userEntityOptional.get().isIntPromo());
+        usersEntity.setPasswd(userEntityOptional.get().getPasswd());
+        usersEntity.setBanned(userEntityOptional.get().isBanned());
+        return this.usersRepository.save(usersEntity);
     }
 
     @Override
     public void deleteUser(Long userId) {
-        Optional<UserEntity> userEntityOptional = this.userRepository.findById(userId);
+        Optional<UsersEntity> userEntityOptional = this.usersRepository.findById(userId);
         if (userEntityOptional.isEmpty()){
             int p =1; // wyjatek
         }
         else{
-            UserEntity userEntity = userEntityOptional.get();
-            this.userRepository.delete(userEntity);
+            UsersEntity userEntity = userEntityOptional.get();
+            this.usersRepository.delete(userEntity);
         }
->>>>>>> c426f9754725fb855b9030ce0b6b4ca89c6781f9
     }
 
     //ZMINA HASLA

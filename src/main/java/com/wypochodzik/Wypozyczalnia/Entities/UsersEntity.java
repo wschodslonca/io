@@ -47,9 +47,9 @@ public class UsersEntity {
 
     private boolean intPromo;
 
-    //@Type(type = "jsonb")
-    //@Column(columnDefinition = "jsonb")
-    //private List<CreditCard> cardData;
+    @Type(type = "jsonb")
+    @Column(columnDefinition = "jsonb")
+    private List<CreditCard> cardData;
 
     private double discountRatio;
 
