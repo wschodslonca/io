@@ -4,11 +4,9 @@ import com.sun.istack.NotNull;
 import lombok.*;
 import org.hibernate.annotations.Type;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Date;
 
 
 @Entity
@@ -21,11 +19,12 @@ import java.sql.Timestamp;
 public class OrdersEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long orderId;
     private Long userId;
     private Long cardId;
-    private Timestamp from;
-    private Timestamp to;
+    private Date from;
+    private Date to;
     private String status;
     private double paymentLeft;
     private boolean insurance;

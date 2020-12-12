@@ -19,6 +19,8 @@ import javax.persistence.Table;
 @Table(name = "FavouritesACL")
 public class FavouritesACLEntity {
 
+    @Id
+    private Long FavouritesACLid;
     private Long userId;
     private Long cardId;
 }

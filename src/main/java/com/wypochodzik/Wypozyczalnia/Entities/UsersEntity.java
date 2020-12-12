@@ -3,11 +3,9 @@ package com.wypochodzik.Wypozyczalnia.Entities;
 import com.sun.istack.NotNull;
 import lombok.*;
 import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -19,10 +17,11 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @Table(name = "Users")
-public class UserEntity {
+public class UsersEntity {
 
     @Id
     @NotNull
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long userId;
 
     @NotNull
@@ -48,9 +47,9 @@ public class UserEntity {
 
     private boolean intPromo;
 
-    @Type(type = "jsonb")
-    @Column(columnDefinition = "jsonb")
-    private List<CreditCard> cardData;
+    //@Type(type = "jsonb")
+    //@Column(columnDefinition = "jsonb")
+    //private List<CreditCard> cardData;
 
     private double discountRatio;
 

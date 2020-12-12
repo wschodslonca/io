@@ -4,7 +4,7 @@ import com.wypochodzik.Wypozyczalnia.Entities.CreditCard;
 import java.util.Date;
 import java.util.List;
 
-public class UserRestResponseDTO {
+public class UsersRestResponseDTO {
 
     private Long userId;
 

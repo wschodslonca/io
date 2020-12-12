@@ -1,8 +1,8 @@
 package com.wypochodzik.Wypozyczalnia.Controllers;
 
-import com.wypochodzik.Wypozyczalnia.DTO.UserCreationDTO;
-import com.wypochodzik.Wypozyczalnia.DTO.UserRestResponseDTO;
-import com.wypochodzik.Wypozyczalnia.Entities.UserEntity;
+import com.wypochodzik.Wypozyczalnia.DTO.UsersCreationDTO;
+import com.wypochodzik.Wypozyczalnia.DTO.UsersRestResponseDTO;
+import com.wypochodzik.Wypozyczalnia.Entities.UsersEntity;
 import com.wypochodzik.Wypozyczalnia.Services.users.UsersService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -33,10 +33,10 @@ public class UsersController {
             @ApiResponse(code = 500, message = "Server malfunction")
     })
     @GetMapping(value = "/users/{userId}")
-    public UserRestResponseDTO getUser(@PathVariable Long userId) {
+    public UsersRestResponseDTO getUser(@PathVariable Long userId) {
 
-        UserEntity userEntity = this.usersService.getUser(userId);
-        return this.modelMapper.map(userEntity, UserRestResponseDTO.class);
+        UsersEntity usersEntity = this.usersService.getUser(userId);
+        return this.modelMapper.map(usersEntity, UsersRestResponseDTO.class);
     }
 
     @ApiOperation(value = "Add a new user", notes = "Adding a new user to database")
@@ -47,12 +47,12 @@ public class UsersController {
             @ApiResponse(code = 500, message = "Server malfunction")
     })
     @PostMapping(value = "/users")
-    public ResponseEntity<UserRestResponseDTO> createUser(
-             @RequestBody UserCreationDTO userCreationDTO) {
+    public ResponseEntity<UsersRestResponseDTO> createUser(
+             @RequestBody UsersCreationDTO usersCreationDTO) {
 
-        UserEntity userEntity = this.usersService.createUser(userCreationDTO);
+        UsersEntity usersEntity = this.usersService.createUser(usersCreationDTO);
 
-        UserRestResponseDTO userRestResponseDto = this.modelMapper.map(userEntity, UserRestResponseDTO.class);
-        return new ResponseEntity<>(userRestResponseDto, HttpStatus.CREATED);
+        UsersRestResponseDTO usersRestResponseDto = this.modelMapper.map(usersEntity, UsersRestResponseDTO.class);
+        return new ResponseEntity<>(usersRestResponseDto, HttpStatus.CREATED);
     }
 }

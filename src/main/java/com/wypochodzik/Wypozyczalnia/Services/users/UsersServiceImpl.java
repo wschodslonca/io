@@ -1,8 +1,8 @@
 package com.wypochodzik.Wypozyczalnia.Services.users;
 
-import com.wypochodzik.Wypozyczalnia.DTO.UserCreationDTO;
-import com.wypochodzik.Wypozyczalnia.Entities.UserEntity;
-import com.wypochodzik.Wypozyczalnia.Repositories.UserRepository;
+import com.wypochodzik.Wypozyczalnia.DTO.UsersCreationDTO;
+import com.wypochodzik.Wypozyczalnia.Entities.UsersEntity;
+import com.wypochodzik.Wypozyczalnia.Repositories.UsersRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,16 +12,16 @@ import java.util.Optional;
 @Service
 public class UsersServiceImpl implements UsersService{
 
-    private final UserRepository userRepository;
+    private final UsersRepository usersRepository;
     private final ModelMapper modelMapper = new ModelMapper();
     @Autowired
-    public UsersServiceImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public UsersServiceImpl(UsersRepository usersRepository) {
+        this.usersRepository = usersRepository;
     }
 
     @Override
-    public UserEntity getUser(Long userId) {
-        Optional<UserEntity> userEntityOptional = this.userRepository.findById(userId);
+    public UsersEntity getUser(Long userId) {
+        Optional<UsersEntity> userEntityOptional = this.usersRepository.findById(userId);
         if (userEntityOptional.isEmpty()){
             return null; // wyjatek
         }
@@ -29,23 +29,23 @@ public class UsersServiceImpl implements UsersService{
     }
 
     @Override
-    public UserEntity createUser(UserCreationDTO userCreationDTO) {
-        if (this.userRepository.findByEmail(userCreationDTO.getEmail()) != null){
+    public UsersEntity createUser(UsersCreationDTO usersCreationDTO) {
+        if (this.usersRepository.findByEmail(usersCreationDTO.getEmail()) != null){
             return null; // wyjatek
         }
-        UserEntity userEntity = this.modelMapper.map(userCreationDTO, UserEntity.class);
-        userEntity.setTotalPayed(0);
-        userEntity.setBanned(false);
-        return this.userRepository.save(userEntity);
+        UsersEntity usersEntity = this.modelMapper.map(usersCreationDTO, UsersEntity.class);
+        usersEntity.setTotalPayed(0);
+        usersEntity.setBanned(false);
+        return this.usersRepository.save(usersEntity);
     }
 
     @Override
-    public UserEntity updateUser(Long userId) {
+    public UsersEntity updateUser(Long userId) {
         return null;
     }
 
     @Override
-    public UserEntity deleteUser(Long userId) {
+    public UsersEntity deleteUser(Long userId) {
         return null;
     }
 }

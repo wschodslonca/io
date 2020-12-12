@@ -20,6 +20,8 @@ import java.sql.Timestamp;
 @Table(name = "Service")
 public class ServiceEntity {
 
+    @Id
+    private Long serviceId;
     private Long carId;
     private String problemInfo;
     private Timestamp estimatedTime;

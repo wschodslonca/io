@@ -4,10 +4,7 @@ import com.sun.istack.NotNull;
 import lombok.*;
 import org.hibernate.annotations.Type;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @Entity
@@ -20,6 +17,7 @@ import javax.persistence.Table;
 public class AdminsEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long adminId;
     private String email;
     private String passwd;
