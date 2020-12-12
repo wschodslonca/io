@@ -1,6 +1,7 @@
 package com.wypochodzik.Wypozyczalnia.Services.users;
 
 import com.wypochodzik.Wypozyczalnia.DTO.UserCreationDTO;
+import com.wypochodzik.Wypozyczalnia.DTO.UserUpdateDTO;
 import com.wypochodzik.Wypozyczalnia.Entities.UserEntity;
 import com.wypochodzik.Wypozyczalnia.Repositories.UserRepository;
 import org.modelmapper.ModelMapper;
@@ -40,12 +41,34 @@ public class UsersServiceImpl implements UsersService{
     }
 
     @Override
-    public UserEntity updateUser(Long userId) {
-        return null;
+    public UserEntity updateUser(Long userId, UserUpdateDTO userUpdateDTO) {
+        Optional<UserEntity> userEntityOptional = this.userRepository.findById(userId);
+        if (userEntityOptional.isEmpty()){
+            return null; // wyjatek
+        }
+        UserEntity userEntity = this.modelMapper.map(userUpdateDTO, UserEntity.class);
+        userEntity.setEmail(userEntityOptional.get().getEmail());
+        userEntity.setUserId(userEntityOptional.get().getUserId());
+        userEntity.setCardData(userEntityOptional.get().getCardData());
+        userEntity.setTotalPayed(userEntityOptional.get().getTotalPayed());
+        userEntity.setDiscountRatio(userEntityOptional.get().getDiscountRatio());
+        userEntity.setIntPromo(userEntityOptional.get().isIntPromo());
+        userEntity.setPasswd(userEntityOptional.get().getPasswd());
+        userEntity.setBanned(userEntityOptional.get().isBanned());
+        return this.userRepository.save(userEntity);
     }
 
     @Override
-    public UserEntity deleteUser(Long userId) {
-        return null;
+    public void deleteUser(Long userId) {
+        Optional<UserEntity> userEntityOptional = this.userRepository.findById(userId);
+        if (userEntityOptional.isEmpty()){
+            int p =1; // wyjatek
+        }
+        else{
+            UserEntity userEntity = userEntityOptional.get();
+            this.userRepository.delete(userEntity);
+        }
     }
+
+    //ZMINA HASLA
 }
