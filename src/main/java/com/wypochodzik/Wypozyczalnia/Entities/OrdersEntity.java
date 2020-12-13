@@ -23,8 +23,8 @@ public class OrdersEntity {
     private Long orderId;
     private Long userId;
     private Long cardId;
-    private Date fromTime;
-    private Date toTime;
+    private Timestamp fromTime;
+    private Timestamp toTime;
     private String status;
     private double paymentLeft;
     private boolean insurance;

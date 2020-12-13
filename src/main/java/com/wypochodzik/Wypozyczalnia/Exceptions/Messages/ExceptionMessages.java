@@ -8,6 +8,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public enum ExceptionMessages {
 
+    NO_SUCH_ORDER("No such order"),
     NO_SUCH_USER("No such user"),
     USER_ALREADY_EXISTS("User already exists"),
     INVALID_PASSWORD("Invalid password");
