@@ -11,7 +11,9 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrdersUpdateDTO {
+public class OrdersDTO {
+
+    private Long userId;
 
     private Long carId;
 
@@ -23,11 +25,9 @@ public class OrdersUpdateDTO {
 
     private double paymentLeft;
 
-    //???
     private boolean insurance;
 
     private int kmLimit;
 
     private boolean toTheDoor;
-    //???
 }

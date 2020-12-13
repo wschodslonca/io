@@ -5,7 +5,6 @@ import lombok.*;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 import java.util.Date;
 
 
@@ -23,8 +22,8 @@ public class OrdersEntity {
     private Long orderId;
     private Long userId;
     private Long cardId;
-    private Timestamp fromTime;
-    private Timestamp toTime;
+    private Date fromTime;
+    private Date toTime;
     private String status;
     private double paymentLeft;
     private boolean insurance;

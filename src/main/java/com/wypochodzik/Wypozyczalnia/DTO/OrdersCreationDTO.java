@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.sql.Timestamp;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -17,9 +17,9 @@ public class OrdersCreationDTO {
 
     private Long carId;
 
-    private Timestamp from;
+    private Date fromTime;
 
-    private Timestamp to;
+    private Date toTime;
 
     private double paymentLeft;
 

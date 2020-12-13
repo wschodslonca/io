@@ -36,6 +36,7 @@ public class UsersServiceImpl implements UsersService{
 
     @Override
     public UsersEntity createUser(UsersCreationDTO usersCreationDTO) throws UserAlreadyExistsException {
+        ///////// ==null ?
         if (this.usersRepository.findByEmail(usersCreationDTO.getEmail()) != null){
             throw new UserAlreadyExistsException();
         }

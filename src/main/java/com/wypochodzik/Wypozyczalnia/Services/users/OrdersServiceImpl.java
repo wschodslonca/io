@@ -7,13 +7,16 @@ import com.wypochodzik.Wypozyczalnia.Exceptions.Classes.NoSuchOrderException;
 import com.wypochodzik.Wypozyczalnia.Repositories.OrdersRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class OrdersServiceImpl implements OrdersService{
 
     private final OrdersRepository ordersRepository;
     private final ModelMapper modelMapper = new ModelMapper();
+
     @Autowired
     public OrdersServiceImpl(OrdersRepository ordersRepository) {
         this.ordersRepository = ordersRepository;
