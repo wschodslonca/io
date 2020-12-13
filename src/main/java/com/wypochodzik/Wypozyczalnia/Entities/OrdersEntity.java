@@ -22,7 +22,7 @@ public class OrdersEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long orderId;
     private Long userId;
-    private Long cardId;
+    private Long carId;
     private Timestamp fromTime;
     private Timestamp toTime;
     private String status;
