@@ -1,9 +1,6 @@
 package com.wypochodzik.Wypozyczalnia.UnitTests;
 
-<<<<<<< HEAD
-=======
 import com.wypochodzik.Wypozyczalnia.DTO.UsersCreationDTO;
->>>>>>> f0cd3c800a7100a7e90044247781327e45d8c915
 import com.wypochodzik.Wypozyczalnia.Entities.UsersEntity;
 import com.wypochodzik.Wypozyczalnia.Exceptions.Classes.InvalidPasswordException;
 import com.wypochodzik.Wypozyczalnia.Exceptions.Classes.NoSuchUserException;
@@ -94,7 +91,7 @@ public class UsersServiceUnitTests {
 
     }
     @Test
-    void createUserAlreadyExixstExceptionTest(){
+    void createUserAlreadyExistsExceptionTest(){
         when(usersRepository.findByEmail(userEmail)).thenReturn(usersEntity);
         assertThrows(UserAlreadyExistsException.class, () -> usersService.createUser(usersCreationDTO));
     }

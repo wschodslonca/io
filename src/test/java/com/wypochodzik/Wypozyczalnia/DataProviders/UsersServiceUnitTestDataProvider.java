@@ -37,12 +37,12 @@ public class UsersServiceUnitTestDataProvider {
                 .passwd("new_pass").address("new_address").birthDate(new Date(2000, Calendar.JANUARY,12)).build();
         usersEntity1 = UsersEntity.builder().userId(userId).email("new_test_user@gmail.com").name("new_name").surname("new_surname").tel("123456789")
                 .passwd("new_pass").address("new_address").birthDate(new Date(2000, Calendar.JANUARY,12))
-                .totalPayed(0.0).isBanned(false).intPromo(false).discountRatio(0.0).cardData(new ArrayList<>()).build();
+                .totalPayed(0.0).isBanned(false).infPromo(false).discountRatio(0.0).cardData(new ArrayList<>()).build();
         usersUpdateDTO = UsersUpdateDTO.builder().name("new_name").surname("new_surname").tel("123456789")
                 .address("new_address").birthDate(new Date(2000, Calendar.JANUARY,12)).build();
         userChangePasswordDTO = UserChangePasswordDTO.builder().oldPass("test_passwd").newPass("new_pass").build();
         usersEntity2 = UsersEntity.builder().userId(userId).email(userEmail).name("test_name").surname("test_surname")
                 .address("test_address").tel("123456789").passwd("test_passwd").birthDate(new Date(2000, Calendar.JANUARY,12))
-                .totalPayed(0.0).isBanned(false).intPromo(true).discountRatio(0.5).cardData(creditCardList).build();
+                .totalPayed(0.0).isBanned(false).infPromo(true).discountRatio(0.5).cardData(creditCardList).build();
     }
 }
