@@ -57,7 +57,7 @@ public class CarsServiceUnitTests {
     }
 
     @Test
-    void getCarNoSuchCarExistsException(){
+    void getCarNoSuchCarException(){
         when(carsRepository.findById(carId)).thenReturn(Optional.empty());
         assertThrows(NoSuchCarException.class, () -> carsService.getCar(carId));
     }
@@ -69,6 +69,7 @@ public class CarsServiceUnitTests {
         assertEquals(carsEntityList1.get(0),carsEntity);
         assertEquals(carsEntityList1.get(1),carsEntity1);
     }
+
     @Test
     void createCarTest(){
         when(modelMapper.map(any(UsersCreationDTO.class),any())).thenReturn(
@@ -123,6 +124,7 @@ public class CarsServiceUnitTests {
         assertEquals(0.0,newCarsEntity.getPromoRatio());
         assertEquals("new_status",newCarsEntity.getStatus());
     }
+
     @Test
     void updateCarNegativePriceExceptionTest(){
         when(carsRepository.findById(carId)).thenReturn(java.util.Optional.ofNullable(carsEntity));
