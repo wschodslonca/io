@@ -35,12 +35,12 @@ public class UsersServiceImpl implements UsersService{
     }
 
     @Override
-    public UsersEntity createUser(UsersCreationDTO usersCreationDTO) {
+    public UsersEntity createUser(UsersCreationDTO usersCreationDTO) throws UserAlreadyExistsException {
         if (this.usersRepository.findByEmail(usersCreationDTO.getEmail()) != null){
             throw new UserAlreadyExistsException();
         }
         UsersEntity usersEntity = this.modelMapper.map(usersCreationDTO, UsersEntity.class);
-        usersEntity.setTotalPayed(0);
+        usersEntity.setTotalPayed(0.0);
         usersEntity.setBanned(false);
         return this.usersRepository.save(usersEntity);
     }
