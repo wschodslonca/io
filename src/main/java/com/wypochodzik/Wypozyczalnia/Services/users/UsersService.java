@@ -12,5 +12,5 @@ public interface UsersService {
     UsersEntity createUser(UsersCreationDTO userCreationDTO);
     UsersEntity updateUser(Long userId, UsersUpdateDTO userUpdateDTO);
     void deleteUser(Long userId);
-    public UsersEntity changePassword(Long userId, UserChangePasswordDTO userPasswordChangeDto);
+    UsersEntity changePassword(Long userId, UserChangePasswordDTO userPasswordChangeDto);
 }
