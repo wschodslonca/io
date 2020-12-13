@@ -2,6 +2,7 @@ package com.wypochodzik.Wypozyczalnia.Services.users;
 
 import com.wypochodzik.Wypozyczalnia.DTO.UsersCreationDTO;
 import com.wypochodzik.Wypozyczalnia.DTO.UsersUpdateDTO;
+import com.wypochodzik.Wypozyczalnia.Entities.CarsEntity;
 import com.wypochodzik.Wypozyczalnia.Entities.UsersEntity;
 import com.wypochodzik.Wypozyczalnia.Repositories.UsersRepository;
 import com.wypochodzik.Wypozyczalnia.DTO.UserChangePasswordDTO;
@@ -12,6 +13,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -32,6 +34,11 @@ public class UsersServiceImpl implements UsersService{
             throw new NoSuchUserException();
         }
         return userEntityOptional.get();
+    }
+
+    @Override
+    public List<UsersEntity> getAllUsers() {
+        return this.usersRepository.findAll();
     }
 
     @Override

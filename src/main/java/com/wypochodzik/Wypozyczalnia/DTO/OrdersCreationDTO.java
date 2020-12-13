@@ -1,9 +1,6 @@
 package com.wypochodzik.Wypozyczalnia.DTO;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
 
@@ -11,15 +8,22 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class OrdersCreationDTO {
 
     private Long userId;
 
     private Long carId;
 
+<<<<<<< HEAD
     private Date fromTime;
 
     private Date toTime;
+=======
+    private Timestamp fromTime;
+
+    private Timestamp toTime;
+>>>>>>> 83bb4c8ecd2f66b92c5867e0f4e5328d90f1e132
 
     private double paymentLeft;
 

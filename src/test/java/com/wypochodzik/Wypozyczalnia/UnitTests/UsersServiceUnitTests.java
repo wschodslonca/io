@@ -65,6 +65,13 @@ public class UsersServiceUnitTests {
     }
 
     @Test
+    void getAllUsers(){
+        when(usersRepository.findAll()).thenReturn(usersEntities);
+        List<UsersEntity> usersEntityList = this.usersService.getAllUsers();
+        assertEquals(usersEntityList.get(0),usersEntity);
+        assertEquals(usersEntityList.get(1),usersEntity1);
+    }
+    @Test
     void createUserTest(){
         when(usersRepository.findByEmail("test1@test.com")).thenReturn(usersEntity);
         when(usersRepository.findByEmail("new_test_user@gmail.com")).thenReturn(null);
@@ -91,7 +98,7 @@ public class UsersServiceUnitTests {
 
     }
     @Test
-    void createUserAlreadyExixstExceptionTest(){
+    void createUserAlreadyExistsExceptionTest(){
         when(usersRepository.findByEmail(userEmail)).thenReturn(usersEntity);
         assertThrows(UserAlreadyExistsException.class, () -> usersService.createUser(usersCreationDTO));
     }

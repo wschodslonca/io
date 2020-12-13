@@ -24,6 +24,7 @@ public class UsersServiceUnitTestDataProvider {
     public static List<CreditCard> creditCardList;
     public static UsersUpdateDTO usersUpdateDTO;
     public static UserChangePasswordDTO userChangePasswordDTO;
+    public static List<UsersEntity> usersEntities;
     static {
         creditCard = CreditCard.builder().number("123412341234").cvc(123).date("2020-12-12").build();
         creditCardList = new ArrayList<>();
@@ -44,5 +45,11 @@ public class UsersServiceUnitTestDataProvider {
         usersEntity2 = UsersEntity.builder().userId(userId).email(userEmail).name("test_name").surname("test_surname")
                 .address("test_address").tel("123456789").passwd("test_passwd").birthDate(new Date(2000, Calendar.JANUARY,12))
                 .totalPayed(0.0).isBanned(false).infPromo(true).discountRatio(0.5).cardData(creditCardList).build();
+<<<<<<< HEAD
+=======
+        usersEntities = new ArrayList<>();
+        usersEntities.add(usersEntity);
+        usersEntities.add(usersEntity1);
+>>>>>>> 83bb4c8ecd2f66b92c5867e0f4e5328d90f1e132
     }
 }

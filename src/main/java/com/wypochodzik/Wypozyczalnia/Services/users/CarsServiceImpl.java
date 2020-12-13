@@ -39,7 +39,7 @@ public class CarsServiceImpl implements CarsService {
     }
 
     @Override
-    public void deleteCar(Long carId) {
+    public void deleteCar(Long carId) throws NoSuchCarException{
         Optional<CarsEntity> carsEntityOptional = this.carsRepository.findById(carId);
         if (carsEntityOptional.isEmpty()) {
             throw new NoSuchCarException();
@@ -48,13 +48,16 @@ public class CarsServiceImpl implements CarsService {
     }
 
     @Override
-    public CarsEntity updateCar(Long carId, CarsDTO carsDTO) throws NoSuchCarException, NegativePriceException {
+    public CarsEntity updateCar(Long carId, CarsDTO carsDTO) throws NoSuchCarException, NegativePriceException, NegativeSeatsException{
         Optional<CarsEntity> carsEntityOptional = this.carsRepository.findById(carId);
         if (carsEntityOptional.isEmpty()) {
             throw new NoSuchCarException();
         }
         if (carsDTO.getPrice()<0) {
             throw new NegativePriceException();
+        }
+        if (carsDTO.getSeats()<0) {
+            throw new NegativeSeatsException();
         }
         CarsEntity carsEntity = this.modelMapper.map(carsDTO,CarsEntity.class);
         return this.carsRepository.save(carsEntity);
