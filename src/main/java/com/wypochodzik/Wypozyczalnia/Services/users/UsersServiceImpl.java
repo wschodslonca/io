@@ -45,7 +45,7 @@ public class UsersServiceImpl implements UsersService{
         return this.usersRepository.save(usersEntity);
     }
 
-    public UsersEntity updateUser(Long userId, UsersUpdateDTO usersUpdateDTO) {
+    public UsersEntity updateUser(Long userId, UsersUpdateDTO usersUpdateDTO) throws NoSuchUserException{
         Optional<UsersEntity> userEntityOptional = this.usersRepository.findById(userId);
         if (userEntityOptional.isEmpty()){
             throw new NoSuchUserException();
@@ -63,7 +63,7 @@ public class UsersServiceImpl implements UsersService{
     }
 
     @Override
-    public void deleteUser(Long userId) {
+    public void deleteUser(Long userId) throws NoSuchUserException{
         Optional<UsersEntity> userEntityOptional = this.usersRepository.findById(userId);
         if (userEntityOptional.isEmpty()){
             throw new NoSuchUserException();
