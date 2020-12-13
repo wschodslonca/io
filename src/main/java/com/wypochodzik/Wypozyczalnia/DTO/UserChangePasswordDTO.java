@@ -1,15 +1,13 @@
 package com.wypochodzik.Wypozyczalnia.DTO;
 
 import com.sun.istack.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class UserChangePasswordDTO {
 
     @NotNull
