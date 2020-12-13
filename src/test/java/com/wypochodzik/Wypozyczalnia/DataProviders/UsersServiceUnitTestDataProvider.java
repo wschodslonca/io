@@ -23,7 +23,7 @@ public class UsersServiceUnitTestDataProvider {
         creditCardList.add(creditCard);
         usersEntity = UsersEntity.builder().userId(userId).email(userEmail).name("test_name").surname("test_surname")
                 .address("test_address").tel("123456789").passwd("test_passwd").birthDate(new Date(2000, Calendar.JANUARY,12))
-                .totalPayed(0.0).isBanned(false).intPromo(true).discountRatio(0.5).cardData(creditCardList).build();
+                .totalPayed(0.0).isBanned(false).infPromo(true).discountRatio(0.5).cardData(creditCardList).build();
         usersCreationDTO = UsersCreationDTO.builder().email(userEmail).name("new_name").surname("new_surname").tel("123456789")
                 .passwd("new_pass").address("new_address").birthDate(new Date(2000, Calendar.JANUARY,12)).build();
     }

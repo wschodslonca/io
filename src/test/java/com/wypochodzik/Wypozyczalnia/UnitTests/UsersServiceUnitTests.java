@@ -1,7 +1,5 @@
 package com.wypochodzik.Wypozyczalnia.UnitTests;
 
-import com.wypochodzik.Wypozyczalnia.DTO.UsersCreationDTO;
-import com.wypochodzik.Wypozyczalnia.Entities.CreditCard;
 import com.wypochodzik.Wypozyczalnia.Entities.UsersEntity;
 import com.wypochodzik.Wypozyczalnia.Exceptions.Classes.NoSuchUserException;
 import com.wypochodzik.Wypozyczalnia.Exceptions.Classes.UserAlreadyExistsException;
@@ -50,7 +48,7 @@ public class UsersServiceUnitTests {
         assertEquals(new Date(2000, Calendar.JANUARY,12),usersEntity1.getBirthDate());
         assertFalse(usersEntity1.isBanned());
         assertEquals(0.0,usersEntity1.getTotalPayed());
-        assertTrue(usersEntity1.isIntPromo());
+        assertTrue(usersEntity1.isInfPromo());
         assertEquals(creditCardList,usersEntity1.getCardData());
         assertEquals(0.5,usersEntity1.getDiscountRatio());
     }

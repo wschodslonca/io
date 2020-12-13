@@ -47,7 +47,7 @@ public class UsersEntity {
     @NotNull
     private String address;
 
-    private boolean intPromo;
+    private boolean infPromo;
 
     @Type(type = "jsonb")
     @Column(columnDefinition = "jsonb")

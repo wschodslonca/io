@@ -56,7 +56,7 @@ public class UsersServiceImpl implements UsersService{
         usersEntity.setCardData(userEntityOptional.get().getCardData());
         usersEntity.setTotalPayed(userEntityOptional.get().getTotalPayed());
         usersEntity.setDiscountRatio(userEntityOptional.get().getDiscountRatio());
-        usersEntity.setIntPromo(userEntityOptional.get().isIntPromo());
+        usersEntity.setInfPromo(userEntityOptional.get().isInfPromo());
         usersEntity.setPasswd(userEntityOptional.get().getPasswd());
         usersEntity.setBanned(userEntityOptional.get().isBanned());
         return this.usersRepository.save(usersEntity);
