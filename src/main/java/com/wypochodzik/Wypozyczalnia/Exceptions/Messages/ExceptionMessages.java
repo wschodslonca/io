@@ -8,6 +8,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public enum ExceptionMessages {
 
+    NO_SUCH_ORDER("No such order"),
     NO_SUCH_USER("No such user"),
     NO_SUCH_CAR("No such car"),
     NEGATIVE_PRICE("Price cant be negative"),
