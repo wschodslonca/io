@@ -3,9 +3,7 @@ package com.wypochodzik.Wypozyczalnia.Controllers;
 import com.wypochodzik.Wypozyczalnia.Entities.ServiceTechEntity;
 import com.wypochodzik.Wypozyczalnia.Models.AdminSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,5 +20,10 @@ public class AdminsController {
     @GetMapping("/servicetechs")
     public List<ServiceTechEntity> getServiceTechs() {
         return adminSession.getAllServiceTechs();
+    }
+
+    @RequestMapping("/addexcar/{id}")
+    public void addExampleCar(@PathVariable int id) {
+        adminSession.addCarBySeats(id);
     }
 }
