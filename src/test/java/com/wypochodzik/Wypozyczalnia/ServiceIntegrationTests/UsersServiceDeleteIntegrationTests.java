@@ -24,13 +24,15 @@ public class UsersServiceDeleteIntegrationTests {
 
     @BeforeEach
     void setUp() {
+        this.usersRepository.deleteAll();
         this.usersRepository.saveAll(usersEntities);
     }
 
     @Test
     void deleteUserTest() {
-        usersService.deleteUser(2L);
-        assertEquals(Optional.empty(),usersRepository.findById(2L));
+        Long userId = this.usersRepository.findAll().get(0).getUserId();
+        usersService.deleteUser(userId);
+        assertEquals(Optional.empty(),usersRepository.findById(userId));
     }
 
     @Test

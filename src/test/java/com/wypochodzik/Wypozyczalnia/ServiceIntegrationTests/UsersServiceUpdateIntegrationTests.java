@@ -31,9 +31,10 @@ public class UsersServiceUpdateIntegrationTests {
 
     @Test
     void updateUserTest(){
-        UsersEntity newUserEntity = this.usersService.updateUser(1L,usersUpdateDTO);
+        Long userId = this.usersRepository.findAll().get(0).getUserId();
+        UsersEntity newUserEntity = this.usersService.updateUser(userId,usersUpdateDTO);
         assertNotNull(newUserEntity);
-        assertEquals(1, newUserEntity.getUserId());
+        assertEquals(userId, newUserEntity.getUserId());
         assertEquals("new_name",newUserEntity.getName());
         assertEquals("new_surname",newUserEntity.getSurname());
         assertEquals("new_address",newUserEntity.getAddress());
