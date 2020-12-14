@@ -17,6 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @NoArgsConstructor
+@ToString
 @TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
 @Table(name = "Users")
 public class UsersEntity {

@@ -13,7 +13,6 @@ package com.wypochodzik.Wypozyczalnia.DataProviders;
 
 public class UsersServiceIntegrationTestsDataProvider {
 
-    public static final Long userId = (long)1;
     public static UsersEntity usersEntity;
     public static UsersEntity usersEntity1;
     public static UsersEntity usersEntity2;
@@ -51,10 +50,10 @@ public class UsersServiceIntegrationTestsDataProvider {
         usersEntities.add(usersEntity2);
         usersEntities.add(usersEntity3);
 
-        usersCreationDTO = UsersCreationDTO.builder().email("new_test_user@gmail.com").name("new_name").surname("new_surname").tel("123456789")
+        usersCreationDTO = UsersCreationDTO.builder().email("user0_email").name("new_name").surname("new_surname").tel("123456789")
                 .passwd("new_pass").address("new_address").birthDate(new Date(2000, Calendar.JANUARY,12)).build();
 
-        usersCreationDTO1 = UsersCreationDTO.builder().email("user1_email").name("new_name").surname("new_surname").tel("123456789")
+        usersCreationDTO1 = UsersCreationDTO.builder().email("new_email1").name("new_name").surname("new_surname").tel("123456789")
                 .passwd("new_pass").address("new_address").birthDate(new Date(2000, Calendar.JANUARY,12)).build();
 
         usersUpdateDTO = UsersUpdateDTO.builder().name("new_name").surname("new_surname").tel("123456789")

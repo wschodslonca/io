@@ -66,8 +66,8 @@ public class CarsServiceUnitTests {
     void getAllCars(){
         when(carsRepository.findAll()).thenReturn(carsEntityList);
         List<CarsEntity> carsEntityList1 = this.carsService.getAllCars();
-        assertEquals(carsEntityList1.get(0),carsEntity);
-        assertEquals(carsEntityList1.get(1),carsEntity1);
+        assertEquals(carsEntity,carsEntityList1.get(0));
+        assertEquals(carsEntity1,carsEntityList1.get(1));
     }
 
     @Test

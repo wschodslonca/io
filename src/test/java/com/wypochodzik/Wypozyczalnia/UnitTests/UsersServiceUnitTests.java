@@ -68,8 +68,8 @@ public class UsersServiceUnitTests {
     void getAllUsers(){
         when(usersRepository.findAll()).thenReturn(usersEntities);
         List<UsersEntity> usersEntityList = this.usersService.getAllUsers();
-        assertEquals(usersEntityList.get(0),usersEntity);
-        assertEquals(usersEntityList.get(1),usersEntity1);
+        assertEquals(usersEntity,usersEntityList.get(0));
+        assertEquals(usersEntity1,usersEntityList.get(1));
     }
     @Test
     void createUserTest(){
