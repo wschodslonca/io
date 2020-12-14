@@ -1,0 +1,32 @@
+<template>
+  <div id="app">
+    <NLBrowseCars/>
+  </div>
+</template>
+
+<script>
+import NLBrowseCars from './components/NLBrowseCars.vue'
+
+export default {
+  name: 'App',
+  components: {
+    NLBrowseCars
+  }
+}
+</script>
+
+<style>
+body {
+	background-color:black;
+}
+#app {
+
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: white;
+  margin-top: 60px;
+  background-color:black;
+}
+</style>
