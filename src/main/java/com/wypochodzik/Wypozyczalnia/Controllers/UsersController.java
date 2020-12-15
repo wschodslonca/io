@@ -1,6 +1,5 @@
 package com.wypochodzik.Wypozyczalnia.Controllers;
 
-import com.wypochodzik.Wypozyczalnia.Entities.UsersEntity;
 import com.wypochodzik.Wypozyczalnia.Services.users.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 

@@ -1,7 +1,6 @@
 package com.wypochodzik.Wypozyczalnia.Controllers;
 
 import com.wypochodzik.Wypozyczalnia.DTO.CarsDTO;
-import com.wypochodzik.Wypozyczalnia.Entities.CarsEntity;
 import com.wypochodzik.Wypozyczalnia.Models.NotLoggedClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

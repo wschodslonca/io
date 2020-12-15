@@ -1,15 +1,9 @@
 package com.wypochodzik.Wypozyczalnia.Models;
 
 import com.wypochodzik.Wypozyczalnia.DTO.CarsDTO;
-import com.wypochodzik.Wypozyczalnia.Entities.CarsEntity;
-import com.wypochodzik.Wypozyczalnia.Entities.ServiceTechEntity;
 import com.wypochodzik.Wypozyczalnia.Models.AdminSession.*;
-import com.wypochodzik.Wypozyczalnia.Services.users.CarsService;
-import com.wypochodzik.Wypozyczalnia.Services.users.ServiceTechService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 @Component
 public class Admin {

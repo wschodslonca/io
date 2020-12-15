@@ -1,7 +1,6 @@
 package com.wypochodzik.Wypozyczalnia.Services.users;
 
 import com.wypochodzik.Wypozyczalnia.Entities.ServiceTechEntity;
-import com.wypochodzik.Wypozyczalnia.Entities.UsersEntity;
 import com.wypochodzik.Wypozyczalnia.Exceptions.Classes.NoSuchUserException;
 import com.wypochodzik.Wypozyczalnia.Repositories.ServiceTechRepository;
 import org.springframework.beans.factory.annotation.Autowired;

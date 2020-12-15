@@ -1,10 +1,8 @@
 package com.wypochodzik.Wypozyczalnia.ServiceIntegrationTests;
 
 import com.wypochodzik.Wypozyczalnia.Entities.UsersEntity;
-import com.wypochodzik.Wypozyczalnia.Exceptions.Classes.UserAlreadyExistsException;
 import com.wypochodzik.Wypozyczalnia.Repositories.UsersRepository;
 import com.wypochodzik.Wypozyczalnia.Services.users.UsersServiceImpl;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

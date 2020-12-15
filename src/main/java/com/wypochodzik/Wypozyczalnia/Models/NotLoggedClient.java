@@ -1,7 +1,6 @@
 package com.wypochodzik.Wypozyczalnia.Models;
 
 import com.wypochodzik.Wypozyczalnia.DTO.CarsDTO;
-import com.wypochodzik.Wypozyczalnia.Entities.CarsEntity;
 import com.wypochodzik.Wypozyczalnia.Models.NotLoggedSession.CarBrowseNL;
 import com.wypochodzik.Wypozyczalnia.Models.NotLoggedSession.Login;
 import com.wypochodzik.Wypozyczalnia.Models.NotLoggedSession.Register;
