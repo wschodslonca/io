@@ -17,4 +17,6 @@ public class CarsDTO {
     private double price;
     private double promoRatio;
     private String status;
+    private String horsepower;
+    private String shortDescription;
 }

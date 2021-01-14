@@ -10,23 +10,14 @@ import NLBrowseCars from './components/NLBrowseCars.vue'
 export default {
   name: 'App',
   components: {
-    NLBrowseCars
+    NLBrowseCars,
   }
 }
 </script>
 
 <style>
 body {
-	background-color:black;
+	background-color: white;
 }
-#app {
 
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: white;
-  margin-top: 60px;
-  background-color:black;
-}
 </style>
