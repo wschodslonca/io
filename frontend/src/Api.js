@@ -8,5 +8,9 @@ const AXIOS = axios.create({
 export default {
     nlcBrowseCars() {
         return AXIOS.get(`/nlc/browsecars`);
+    },
+
+    lcMakeOrder(params) {
+        return AXIOS.post('/lc/makeorder',params);
     }
 }

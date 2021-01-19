@@ -4,64 +4,64 @@
         <h1 class = "header">Wypożyczalnia samochodów</h1>
         <img class = "logo" src="./../assets/logo.png" width=100 height=100>
         <button class = "login" @click="callNLBrowseCarsApi()">Konto klienta</button>
-          <div>
-              <div class="card" id = "item1">
-                  <img class = "carsImages" src="./../assets/LC500.jpg" alt="Lexus LC500" style="width:300px;height:190px;">
-                  <h1>Lexus LC500</h1>
-                  <p class="price">1500 zł/24h</p>
-                  <p>Sportowa elegancja</p>
-                  <p><button>Specyfikacja i zamówienia</button></p>
-              </div>
-              <div class="card" id = "item2">
-                  <img class = "carsImages" src="./../assets/LS500h.jpg" alt="Lexus LC500" style="width:300px;height:190px;">
-                  <h1>Lexus LS500h</h1>
-                  <p class="price">1300 zł/24h</p>
-                  <p>Nieograniczony luksus</p>
-                  <p><button>Specyfikacja i zamówienia</button></p>
-              </div>
-              <div class="card" id = "item3">
-                  <img class = "carsImages" src="./../assets/seria3.jpg" alt="Lexus LC500" style="width:300px;height:190px;">
-                  <h1>BMW serii 3</h1>
-                  <p class="price">800 zł/24h</p>
-                  <p>Radość z jazdy</p>
-                  <p><button>Specyfikacja i zamówienia</button></p>
-              </div>
-              <div class="card" id = "item4">
-                  <img class = "carsImages" src="./../assets/mazda3.jpg" alt="Mazda 3" style="width:300px;height:190px;">
-                  <h1>Mazda 3</h1>
-                  <p class="price">700 zł/24h</p>
-                  <p>Hatchback z klasą</p>
-                  <p><button>Specyfikacja i zamówienia</button></p>
-              </div>
-              <div class="card" id = "item5">
-                  <img class = "carsImages" src="./../assets/megane.jpg" alt="Mazda 3" style="width:300px;height:190px;">
-                  <h1>Renoult Megane</h1>
-                  <p class="price">500 zł/24h</p>
-                  <p>Francuski przysmak</p>
-                  <p><button>Specyfikacja i zamówienia</button></p>
-              </div>
-              <div class="card" id = "item6">
-                  <img class = "carsImages" src="./../assets/octavia.jpg" alt="Mazda 3" style="width:300px;height:190px;">
-                  <h1>Skoda Octavia</h1>
-                  <p class="price">500 zł/24h</p>
-                  <p>Klasyka</p>
-                  <p><button>Specyfikacja i zamówienia</button></p>
-              </div>
-              <div class="card" id = "item7">
-                  <img class = "carsImages" src="./../assets/nissan.jpg" alt="Mazda 3" style="width:300px;height:190px;">
-                  <h1>Nissan Qashqai</h1>
-                  <p class="price">600 zł/24h</p>
-                  <p>SUV na Twoje potrzeby</p>
-                  <p><button>Specyfikacja i zamówienia</button></p>
-              </div>
-              <div class="card" id = "item8">
-                  <img class = "carsImages" src="./../assets/sandero.jpg" alt="Dacia Sandero" style="width:300px;height:190px;">
-                  <h1>Dacia Sandero</h1>
-                  <p class="price">400 zł/24h</p>
-                  <p>Podstawowy środek transportu</p>
-                  <p><button>Specyfikacja i zamówienia</button></p>
-              </div>
-          </div>
+<!--          <div>-->
+<!--              <div class="card" id = "item1">-->
+<!--                  <img class = "carsImages" src="./../assets/LC500.jpg" alt="Lexus LC500" style="width:300px;height:190px;">-->
+<!--                  <h1>Lexus LC500</h1>-->
+<!--                  <p class="price">1500 zł/24h</p>-->
+<!--                  <p>Sportowa elegancja</p>-->
+<!--                  <p><button>Specyfikacja i zamówienia</button></p>-->
+<!--              </div>-->
+<!--              <div class="card" id = "item2">-->
+<!--                  <img class = "carsImages" src="./../assets/LS500h.jpg" alt="Lexus LC500" style="width:300px;height:190px;">-->
+<!--                  <h1>Lexus LS500h</h1>-->
+<!--                  <p class="price">1300 zł/24h</p>-->
+<!--                  <p>Nieograniczony luksus</p>-->
+<!--                  <p><button>Specyfikacja i zamówienia</button></p>-->
+<!--              </div>-->
+<!--              <div class="card" id = "item3">-->
+<!--                  <img class = "carsImages" src="./../assets/seria3.jpg" alt="Lexus LC500" style="width:300px;height:190px;">-->
+<!--                  <h1>BMW serii 3</h1>-->
+<!--                  <p class="price">800 zł/24h</p>-->
+<!--                  <p>Radość z jazdy</p>-->
+<!--                  <p><button>Specyfikacja i zamówienia</button></p>-->
+<!--              </div>-->
+<!--              <div class="card" id = "item4">-->
+<!--                  <img class = "carsImages" src="./../assets/mazda3.jpg" alt="Mazda 3" style="width:300px;height:190px;">-->
+<!--                  <h1>Mazda 3</h1>-->
+<!--                  <p class="price">700 zł/24h</p>-->
+<!--                  <p>Hatchback z klasą</p>-->
+<!--                  <p><button>Specyfikacja i zamówienia</button></p>-->
+<!--              </div>-->
+<!--              <div class="card" id = "item5">-->
+<!--                  <img class = "carsImages" src="./../assets/megane.jpg" alt="Mazda 3" style="width:300px;height:190px;">-->
+<!--                  <h1>Renoult Megane</h1>-->
+<!--                  <p class="price">500 zł/24h</p>-->
+<!--                  <p>Francuski przysmak</p>-->
+<!--                  <p><button>Specyfikacja i zamówienia</button></p>-->
+<!--              </div>-->
+<!--              <div class="card" id = "item6">-->
+<!--                  <img class = "carsImages" src="./../assets/octavia.jpg" alt="Mazda 3" style="width:300px;height:190px;">-->
+<!--                  <h1>Skoda Octavia</h1>-->
+<!--                  <p class="price">500 zł/24h</p>-->
+<!--                  <p>Klasyka</p>-->
+<!--                  <p><button>Specyfikacja i zamówienia</button></p>-->
+<!--              </div>-->
+<!--              <div class="card" id = "item7">-->
+<!--                  <img class = "carsImages" src="./../assets/nissan.jpg" alt="Mazda 3" style="width:300px;height:190px;">-->
+<!--                  <h1>Nissan Qashqai</h1>-->
+<!--                  <p class="price">600 zł/24h</p>-->
+<!--                  <p>SUV na Twoje potrzeby</p>-->
+<!--                  <p><button>Specyfikacja i zamówienia</button></p>-->
+<!--              </div>-->
+<!--              <div class="card" id = "item8">-->
+<!--                  <img class = "carsImages" src="./../assets/sandero.jpg" alt="Dacia Sandero" style="width:300px;height:190px;">-->
+<!--                  <h1>Dacia Sandero</h1>-->
+<!--                  <p class="price">400 zł/24h</p>-->
+<!--                  <p>Podstawowy środek transportu</p>-->
+<!--                  <p><button>Specyfikacja i zamówienia</button></p>-->
+<!--              </div>-->
+<!--          </div>-->
 
 <!--     LOGOWANIE SIĘ --------------------------------------------------------------------------     -->
 <!--          <div>-->
@@ -78,47 +78,47 @@
 <!--              </div>-->
 <!--          </div>-->
 <!--     SPECYFIKACJA ---------------------------------------------------------------------------->
-<!--          <div>-->
-<!--              <img class = "carsImages" id="specificationImage" src="./../assets/seria3.jpg" alt="Lexus LC500">-->
-<!--              <div id = "specificationTable">-->
-<!--                  <table>-->
-<!--                      <tr>-->
-<!--                          <td>Moc</td>-->
-<!--                          <td style = "font-weight: bold; text-align: right">220 KM</td>-->
-<!--                      </tr>-->
-<!--                      <tr>-->
-<!--                          <td>Skrzynia biegów</td>-->
-<!--                          <td style = "font-weight: bold; text-align: right">Automatyczna</td>-->
-<!--                      </tr>-->
-<!--                      <tr>-->
-<!--                          <td>Napęd</td>-->
-<!--                          <td style = "font-weight: bold; text-align: right">RWD</td>-->
-<!--                      </tr>-->
-<!--                      <tr>-->
-<!--                          <td>Paliwo</td>-->
-<!--                          <td style = "font-weight: bold; text-align: right">Benzyna</td>-->
-<!--                      </tr>-->
-<!--                      <tr>-->
-<!--                          <td>Dopuszczalna ilość osób</td>-->
-<!--                          <td style = "font-weight: bold; text-align: right">5</td>-->
-<!--                      </tr>-->
-<!--                      <tr>-->
-<!--                          <td style = "font-weight: bold;">Cena</td>-->
-<!--                          <td style = "font-weight: bold; text-align: right">800 zł/km</td>-->
-<!--                      </tr>-->
-<!--                  </table>-->
-<!--                  <button class = "specificationButton" @click="callNLBrowseCarsApi()">Zamów!</button>-->
-<!--              </div>-->
-<!--              <label class = "dateLabel" id="startLabel">Data rozpoczęcia: </label>-->
-<!--              <input class = "calendar" type="date" id="calendarStart"-->
-<!--                     value="2021-01-01"-->
-<!--                     min="2021-01-01" max="2022-01-01">-->
-<!--              <label class = "dateLabel" id="endLabel">Data zakończenia: </label>-->
-<!--              <input class = "calendar" type="date" id="calendarEnd"-->
-<!--                     value="2021-01-02"-->
-<!--                     min="2021-01-02" max="2022-01-01">-->
-<!--              <h1 style="text-align: center; position: relative; bottom: 120px;">BMW serii 3</h1>-->
-<!--          </div>-->
+          <div>
+              <img class = "carsImages" id="specificationImage" src="./../assets/seria3.jpg" alt="Lexus LC500">
+              <div id = "specificationTable">
+                  <table>
+                      <tr>
+                          <td>Moc</td>
+                          <td style = "font-weight: bold; text-align: right">220 KM</td>
+                      </tr>
+                      <tr>
+                          <td>Skrzynia biegów</td>
+                          <td style = "font-weight: bold; text-align: right">Automatyczna</td>
+                      </tr>
+                      <tr>
+                          <td>Napęd</td>
+                          <td style = "font-weight: bold; text-align: right">RWD</td>
+                      </tr>
+                      <tr>
+                          <td>Paliwo</td>
+                          <td style = "font-weight: bold; text-align: right">Benzyna</td>
+                      </tr>
+                      <tr>
+                          <td>Dopuszczalna ilość osób</td>
+                          <td style = "font-weight: bold; text-align: right">5</td>
+                      </tr>
+                      <tr>
+                          <td style = "font-weight: bold;">Cena</td>
+                          <td style = "font-weight: bold; text-align: right">800 zł/km</td>
+                      </tr>
+                  </table>
+                  <button class = "specificationButton" @click="callLCMakeOrder()">Zamów!</button>
+              </div>
+              <label class = "dateLabel" id="startLabel">Data rozpoczęcia: </label>
+              <input class = "calendar" type="date" id="calendarStart"
+                     value="2021-01-01"
+                     min="2021-01-01" max="2022-01-01" v-model="d.fromTime">
+              <label class = "dateLabel" id="endLabel">Data zakończenia: </label>
+              <input class = "calendar" type="date" id="calendarEnd"
+                     value="2021-01-02"
+                     min="2021-01-02" max="2022-01-01" v-model="d.toTime">
+              <h1 style="text-align: center; position: relative; bottom: 120px;">BMW serii 3</h1>
+          </div>
       </div>
     </body>
 </template>
@@ -130,21 +130,36 @@ export default {
   name: 'NLBrowseCars',
 
   data () {
-	return {
-		cars: [],
-		errors: []
-	}
+    return {
+      cars: [],
+      errors: [],
+      d: {
+        carId:3,
+        fromTime:'',
+        toTime:'',
+        paymentLeft:800,
+        insurance:false,
+        kmLimit:200,
+        toTheDoor:false
+      }
+    }
   },
 
   methods: {
-	callNLBrowseCarsApi() {
-		api.nlcBrowseCars().then(response => {
-			this.cars = response.data;
-		})
-		.catch(error => {
-			this.errors.push(error)
-		})
-	}
+    callNLBrowseCarsApi() {
+      api.nlcBrowseCars().then(response => {
+        this.cars = response.data;
+      })
+      .catch(error => {
+        this.errors.push(error)
+      })
+	},
+    callLCMakeOrder() {
+      api.lcMakeOrder(this.d)
+          .catch(error => {
+            this.errors.push(error)
+          })
+    }
   }
 
 }
